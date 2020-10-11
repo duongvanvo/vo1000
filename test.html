@@ -1,0 +1,276 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>bài tập</title>
+	<link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script type="text/javascript">
+ //BÀI 21
+        bai21 = () => {
+        var arr = [1,2,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2,1];
+        var sum = 0;
+        for(var i=0;i<arr.length;i++){ 
+        sum += arr[i]}
+        console.log("Tổng là " + sum);
+        }
+        bai21();
+
+//Bài 22
+        var arr = [1,2,3,4,5,6,7,8,9,9,8,7,6,5,4,3,2,1];
+        var a,b = 0;
+        bai22 = () => {
+            for (var i=0;i<arr.length;i++){
+                if (a <= arr[i]){
+                    a = a
+                } else { a = arr[i]}
+            }
+        console.log('Số bé nhất là: ' + a)
+        for (var i=0;i<arr.length;i++){
+                if (b >= arr[i]){
+                    b = b
+                } else { var b = arr[i]}
+            }
+        console.log('Số lớn nhất là: ' + b)
+            for (var i=0;i<arr.length;i++){
+                var temp1 = arr[i] - a
+                var temp2 = b - arr[i]
+                if(temp1 == temp2)
+                {
+                    console.log("Số trung bình là: " +arr[i])
+                    break
+                } 
+                }
+            }
+    bai22()
+
+// BÀI 23
+        var arr = [1,2,3,4,5,6,7,8,9,3,3,9,8,7,6,5,4,3,2,1]
+        var arr2 = arr.sort()
+        bai23 = () => {
+            var max = 0
+            var count = 1
+            for (var i=0;i<arr2.length;i++)
+            {
+                if(arr2[i]===arr2[i + 1])
+		{
+			count += count
+				if(count>=max)
+				{
+                    max=count
+				}	
+		}
+		else
+		{	
+            count=1
+		}
+	}
+    console.log("Số tần suất xuất hiện nhiều nhất là:" +max)
+    
+    }
+            
+
+    bai23()
+
+//bài 24
+check = (n) => {
+    if (n < 2) {
+        return false}
+        for (var i = 2; i < n; i++) {
+        if (n % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+var arr = [1,2,3,2,3,4,6,7]
+var arr2 = arr.filter(function(a) {
+    return check(a)
+})
+console.log("Số nguyên tố là " +arr2)
+//bài 25
+bai25 = () =>{
+var arr = [1,2,3,2,3,4,6,7]
+var arr2 = arr.map(function(n){
+    return n*n
+})
+console.log("mảng sau khi bình phương là: "+arr2)
+}
+bai25()
+//bài 26
+bai26 = () => {
+    var arr = [1,2,3,4,6,7] 
+    var arr2 = []
+    var arr3 = []
+    var k = 8
+    for (var i=0;i<arr.length;i++){
+        if (arr[i]=k){
+            console.log(+arr[i])
+            break
+        } else if (arr[i]<k) {
+            arr2.push(arr[i])
+        } else {
+            arr3.push(arr[i])
+        }
+            }
+            console.log("số gần nhất là "+Math.max.apply(Math,arr2))
+            console.log("và "+Math.min.apply(Math,arr3))   
+    }
+bai26()
+//bài 27 
+bai27 = () => {
+    students = [
+    {
+        id: "T3HXX1",
+        firstName: "NgAN",
+        lastName: "DuoNg Thuy"
+    },
+    {
+        id: "T3HXX2",
+        firstName: "Ha",
+        lastName: "Do Thi Thu"
+    },
+    {
+        id: "T3HXX5",
+        firstName: "Minh",
+        lastName: "Nguyen Nhat"
+    }
+]
+var x = students.filter(student => student.firstName.length >= 3).map(name => {
+                return {
+                    id: name.id,
+                    firstName: (name.firstName[0].toUpperCase() + name.firstName.toLowerCase().slice(1)),
+                    lastName: name.lastName.toLowerCase().split(" ").map(item => item[0].toUpperCase() + item.slice(1)).join(" ")
+                }});
+
+    console.log(x);
+}
+bai27()
+//bài 28
+bai28 =() => {
+    students = [
+    {
+        id: "T3HXX1",
+        firstName: "NgAN",
+        lastName: "DuoNg Thuy"
+    },
+    {
+        id: "T3HXX2",
+        firstName: "Ha",
+        lastName: "Do Thi Thu"
+    },
+    {
+        id: "T3HXX5",
+        firstName: "Minh",
+        lastName: "Nguyen Nhat"
+    }
+]
+var x = students.filter(name => name.lastName.split(" ")[0] === "Do")
+console.log(x)
+}
+bai28()
+//bài 29
+bai29 = () =>{
+    students = [
+    {
+        id: "T3HXX1",
+        firstName: "Ngan",
+        lastName: "Duong Thuy"
+    },
+    {
+        id: "T3HXX2",
+        firstName: "Ha",
+        lastName: "Do Thi Thu"
+    },
+    {
+        id: "T3HXX5",
+        firstName: "Minh",
+        lastName: "Nguyen Nhat"
+    }
+]
+var z = students.sort(function sapxep(a, b){
+    var x = a.firstName.toLowerCase();
+    var y = b.firstName.toLowerCase();
+    if (x < y) {return -1;}
+    if (x > y) {return 1;}
+    return 0;
+});
+console.log(z)
+}
+bai29()
+//bai30
+bai30 = () => {
+    var arr = [1,2,3,4,5,6,7,8,9,9,9,8,7,6,5,4,3,2,1] 
+    arr.sort().reverse()
+    var arr2 = arr.filter(b => b < Math.max(...arr))
+    var i = arr2.indexOf(Math.max(...arr2))
+    if ( i == -1) {
+        console.log("só lớn thứ nhì là " +i)
+    } else {
+    console.log("só lớn thứ nhì là " +arr2[i])
+    }
+}
+bai30()
+//bài 31
+bai31 = (aray,k) => {
+    arr = [1,2,3,4,5,6,7,8,9,9,9,8,7,6,5,4,3,2,1]
+    var count=0
+    var k = 13
+    for (var i=0;i<arr.length;i++){
+        for (var j=1;j<arr.length-1;j++){
+            for (var x=2;x<arr.length-2;x++){
+                if (arr[i] + arr[j] + arr[x] == k){
+                    count = count +1
+                }if (count == 1){break}
+            }
+        }
+    }
+if(count==0){
+    console.log("NO")
+}else{ console.log("YES")}
+}
+bai31()
+//bài 32
+bai32 = () => {
+    var arr = [1,3,6,9,11,20]
+    var k = 13
+    var x = arr.filter(item => item < k).length
+    arr.splice(x, 0, k)
+    console.log(arr)
+}
+bai32()
+//bài 33
+bai33 =() => {
+    var arr = [5,5,4,4,3,3,2,2,1,1]
+    var arr2 = []
+    for (var i = 0; i<arr.length; i++) {
+        for(var j = 0; j <= Math.max(...arr); j++) {
+            if (arr[i] == j) {
+                arr2.unshift(arr[i])
+            }
+        }
+    }
+    console.log(arr2) 
+}
+bai33()
+//
+// function sayHello(name, callback) {
+// 	var myName = name.toUpperCase() + ", Hello";
+//     return callback(myName);
+// }
+ 
+// var result = sayHello("Vo", function (arg) {
+//     return arg;
+// });
+ 
+// alert(result);
+
+
+    </script>
+    
+</body>
+
+</html>
